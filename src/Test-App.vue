@@ -17,6 +17,23 @@ export default {
       name: "app",
     };
   },
+  mounted() {
+    console.log(`this.$parent`, this.$parent);
+    console.log(`this.$children`, this.$children);
+    console.log(`this.$root`, this.$root);
+
+    console.log(`this.$attrs`, this.$attrs);
+    console.log(`this.$listeners`, this.$listeners);
+    console.log(`this.$slots`, this.$slots);
+    console.log(`this.$scopedSlots`, this.$scopedSlots);
+
+    console.log(`this.$data`, this.$data);
+    console.log(`this.$props`, this.$props);
+    console.log(`this.$el`, this.$el);
+    console.log(`this.$options`, this.$options);
+
+    console.log(`this.$isServer`, this.$isServer);
+  },
 };
 </script>
 
