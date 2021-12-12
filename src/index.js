@@ -1,4 +1,4 @@
-import Row from "../packages/row/index.js";
+import Row from "./packages/row/index.js";
 
 // components 存放所有element中的组件
 const components = [Row];
