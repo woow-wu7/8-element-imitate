@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <el-row tag="div" type="flex" justify="center" align="middle" class="content">
-      <p>row</p>
+    <el-row tag="div" type="flex" justify="start" align="middle" class="content">
+      <el-col span="12" style="background: red;">111</el-col>
+      <el-col span="6" style="background: green;">222</el-col>
+      <el-col span="6" style="background: gray;">333</el-col>
     </el-row>
   </div>
 </template>
