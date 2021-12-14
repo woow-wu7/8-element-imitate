@@ -1,3 +1,6 @@
+@import "function";
+@import "../common/var";
+
 /* BEM
  -------------------------- */
 @mixin b($block) {
