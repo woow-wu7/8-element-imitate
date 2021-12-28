@@ -23,6 +23,8 @@ in<template>
       :age2.sync="age2"
     />
     <!-- 注意： @change-age="age = $event" 表示：当子组件通过$emit触发@change-age事件时，$event代表了$emit的第一个参数 -->
+
+    <TestRecursive :tree="tree" />
   </div>
 </template>
 
@@ -30,17 +32,43 @@ in<template>
 import TestFor from "./Test-$placeholder/test-scss/@for.vue";
 import TestEvent from "./Test-$placeholder/test-event/index.vue";
 import TestVmodel from "./Test-$placeholder/test-v-model/index.vue";
+import TestRecursive from "./Test-$placeholder/test-recursive/index.vue";
 export default {
   name: "App",
   components: {
     TestFor: TestFor, // 测试 @for $i from x to/through xxx
     TestEvent: TestEvent,
     TestVmodel: TestVmodel,
+    TestRecursive: TestRecursive,
   },
   data() {
     return {
       age: 1,
       age2: 2,
+      tree: {
+        name: "father",
+        expand: true, // 是否已经展开
+        leaf: false, // 是否是叶子节点来区分是现实文件夹，还是文件等等
+        children: [
+          {
+            name: "child1",
+            expand: true,
+            leaf: true,
+          },
+          {
+            name: "child2",
+            expand: true,
+            leaf: false,
+            children: [
+              {
+                name: "grandson",
+                leaf: true,
+                expand: true
+              },
+            ],
+          },
+        ],
+      },
     };
   },
   methods: {
