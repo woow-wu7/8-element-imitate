@@ -1,4 +1,4 @@
-in<template>
+<template>
   <div id="app">
     <dv-row>
       <dv-col :span="12">
@@ -9,6 +9,7 @@ in<template>
       </dv-col>
       <dv-col :span="6">
         <div>6</div>
+        <div>a1</div>
       </dv-col>
     </dv-row>
 
@@ -22,9 +23,15 @@ in<template>
       @change-age="age = $event"
       :age2.sync="age2"
     />
-    <!-- 注意： @change-age="age = $event" 表示：当子组件通过$emit触发@change-age事件时，$event代表了$emit的第一个参数 -->
 
+    <!-- 注意： @change-age="age = $event" 表示：当子组件通过$emit触发@change-age事件时，$event代表了$emit的第一个参数 -->
     <TestRecursive :tree="tree" />
+
+    <!-- 测试render函数 和 vnode.componentOptions.tag -->
+    <TestRender>
+      <TestRenderChild1 />
+      <TestRenderChild2 />
+    </TestRender>
   </div>
 </template>
 
@@ -33,13 +40,20 @@ import TestFor from "./Test-$placeholder/test-scss/@for.vue";
 import TestEvent from "./Test-$placeholder/test-event/index.vue";
 import TestVmodel from "./Test-$placeholder/test-v-model/index.vue";
 import TestRecursive from "./Test-$placeholder/test-recursive/index.vue";
+import TestRender from "./Test-$placeholder/test-render/index";
+import TestRenderChild1 from "./Test-$placeholder/test-render/TestRenderChild1.vue";
+import TestRenderChild2 from "./Test-$placeholder/test-render/TestRenderChild2.vue";
+
 export default {
   name: "App",
   components: {
-    TestFor: TestFor, // 测试 @for $i from x to/through xxx
-    TestEvent: TestEvent,
-    TestVmodel: TestVmodel,
-    TestRecursive: TestRecursive,
+    TestFor, // 测试 @for $i from x to/through xxx
+    TestEvent,
+    TestVmodel,
+    TestRecursive,
+    TestRender,
+    TestRenderChild1,
+    TestRenderChild2,
   },
   data() {
     return {
@@ -63,7 +77,7 @@ export default {
               {
                 name: "grandson",
                 leaf: true,
-                expand: true
+                expand: true,
               },
             ],
           },
