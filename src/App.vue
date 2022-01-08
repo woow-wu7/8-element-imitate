@@ -35,7 +35,7 @@
 
     <TestSup />
 
-    <TestBadge :value="badgeValue" :max="14" type="primary">
+    <TestBadge :value="badgeValue" :max="14" type="success">
       <button>按钮</button>
     </TestBadge>
   </div>

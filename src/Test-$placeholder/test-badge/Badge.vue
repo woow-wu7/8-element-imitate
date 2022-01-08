@@ -51,6 +51,11 @@ $height: 18px;
   background: red;
   @content;
 }
+@each $type, $color in (primary: blue, success: green, danger: red) {
+  .badge__content--#{$type} {
+    background: $color !important;
+  }
+}
 
 .badge {
   display: inline-block;
@@ -78,13 +83,5 @@ $height: 18px;
     font-size: 12px;
   }
 }
-.badge__content--primary {
-  background: blue !important;
-}
-.badge__content--success {
-  background: green !important;
-}
-.badge__content--danger {
-  background: red !important;
-}
+
 </style>
