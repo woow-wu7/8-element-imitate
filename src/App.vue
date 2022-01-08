@@ -32,6 +32,12 @@
       <TestRenderChild1 />
       <TestRenderChild2 />
     </TestRender>
+
+    <TestSup />
+
+    <TestBadge :value="badgeValue" :max="14" type="primary">
+      <button>按钮</button>
+    </TestBadge>
   </div>
 </template>
 
@@ -43,6 +49,8 @@ import TestRecursive from "./Test-$placeholder/test-recursive/index.vue";
 import TestRender from "./Test-$placeholder/test-render/index";
 import TestRenderChild1 from "./Test-$placeholder/test-render/TestRenderChild1.vue";
 import TestRenderChild2 from "./Test-$placeholder/test-render/TestRenderChild2.vue";
+import TestSup from "./Test-$placeholder/test-sup/index.vue";
+import TestBadge from "./Test-$placeholder/test-badge/Badge.vue";
 
 export default {
   name: "App",
@@ -54,9 +62,12 @@ export default {
     TestRender,
     TestRenderChild1,
     TestRenderChild2,
+    TestSup,
+    TestBadge,
   },
   data() {
     return {
+      badgeValue: 108,
       age: 1,
       age2: 2,
       tree: {
