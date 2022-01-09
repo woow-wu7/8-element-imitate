@@ -38,6 +38,16 @@
     <TestBadge :value="badgeValue" :max="14" type="success">
       <button>按钮</button>
     </TestBadge>
+
+    <TestCard shadow="hover" :bodyStyle="bodyStyle">
+      <template #header>
+        <span>卡片名称</span>
+        <button>操作安按钮</button>
+      </template>
+      <div>
+        <p>content</p>
+      </div>
+    </TestCard>
   </div>
 </template>
 
@@ -50,7 +60,8 @@ import TestRender from "./Test-$placeholder/test-render/index";
 import TestRenderChild1 from "./Test-$placeholder/test-render/TestRenderChild1.vue";
 import TestRenderChild2 from "./Test-$placeholder/test-render/TestRenderChild2.vue";
 import TestSup from "./Test-$placeholder/test-sup/index.vue";
-import TestBadge from "./Test-$placeholder/test-badge/Badge.vue";
+import TestBadge from "./Test-$placeholder/components/test-badge/Badge.vue";
+import TestCard from "./Test-$placeholder/components/test-card/Card.vue";
 
 export default {
   name: "App",
@@ -64,6 +75,7 @@ export default {
     TestRenderChild2,
     TestSup,
     TestBadge,
+    TestCard,
   },
   data() {
     return {
@@ -93,6 +105,9 @@ export default {
             ],
           },
         ],
+      },
+      bodyStyle: {
+        background: "yellow",
       },
     };
   },
