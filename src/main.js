@@ -5,9 +5,11 @@ import "./packages/theme-chalk/index.scss";
 // import ElementUI from "./index.js";
 import App from "./App";
 import DivineUi from "8-divine";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(DivineUi);
-// Vue.use(ElementUI);
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 

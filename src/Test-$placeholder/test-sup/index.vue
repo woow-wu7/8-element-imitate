@@ -10,7 +10,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'test-sup-component'
+};
 </script>
 
 <style>

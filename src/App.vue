@@ -48,6 +48,28 @@
         <p>content</p>
       </div>
     </TestCard>
+
+    <div style="border: 10px solid black">
+      <TestSlot>
+        <template v-slot:header> header </template>
+        <template v-slot:default>
+          <div>div1</div>
+          <div>div2</div>
+          <TestSup />
+          <TestFor />
+          <TestVmodel
+            @focus.native="onFucus"
+            :age="age"
+            @change-age="age = $event"
+            :age2.sync="age2"
+          />
+          <TestBadge :value="badgeValue" :max="14" type="success">
+            <button>按钮</button>
+          </TestBadge>
+        </template>
+        <template v-slot:footer> footer </template>
+      </TestSlot>
+    </div>
   </div>
 </template>
 
@@ -62,6 +84,7 @@ import TestRenderChild2 from "./Test-$placeholder/test-render/TestRenderChild2.v
 import TestSup from "./Test-$placeholder/test-sup/index.vue";
 import TestBadge from "./Test-$placeholder/components/test-badge/Badge.vue";
 import TestCard from "./Test-$placeholder/components/test-card/Card.vue";
+import TestSlot from "./Test-$placeholder/test-slot/index.vue";
 
 export default {
   name: "App",
@@ -76,6 +99,7 @@ export default {
     TestSup,
     TestBadge,
     TestCard,
+    TestSlot,
   },
   data() {
     return {

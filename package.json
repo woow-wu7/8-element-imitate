@@ -12,6 +12,7 @@
   "dependencies": {
     "8-divine": "^1.2.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
     "vue": "^2.6.11"
   },
   "devDependencies": {

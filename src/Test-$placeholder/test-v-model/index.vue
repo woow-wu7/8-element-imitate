@@ -30,7 +30,7 @@ export default {
   props: {
     age: {
       type: Number,
-      default: () => 10,
+      default: 10
     },
     age2: {
       type: Number,
